@@ -1,73 +1,282 @@
-# React + TypeScript + Vite
+📘 Course Management System (Frontend)
+======================================
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fully responsive Course Management System built with **React + TypeScript + Redux Toolkit + Tailwind CSS**.This application allows users to manage courses, categories, enrollments, and user data through a clean and scalable interface.
 
-Currently, two official plugins are available:
+🚀 Tech Stack
+-------------
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+*   **React 18 + TypeScript**
+    
+*   **Vite**
+    
+*   **Redux Toolkit (State Management)**
+    
+*   **React Router v6**
+    
+*   **Axios (API Communication)**
+    
+*   **React Hook Form + Zod (Form Handling & Validation)**
+    
+*   **Tailwind CSS (UI & Responsiveness)**
+    
 
-## React Compiler
+🔌 API Integration
+------------------
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+All data is fetched from the provided API:
 
-## Expanding the ESLint configuration
+👉 [https://register.cseconference.org/swagger/index.html](https://register.cseconference.org/swagger/index.html)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 🔐 Admin Credentials
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+*   Email: [system@admin.com](mailto:system@admin.com)
+    
+*   Password: password123
+    
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+✨ Features
+----------
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🔐 Authentication
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+*   Secure login system
+    
+*   JWT token stored in localStorage
+    
+*   Protected routes
+    
+*   Automatic logout on token expiration (401)
+    
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 📊 Dashboard
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+*   Clean SaaS-style UI
+    
+*   Summary cards (Courses, Categories, Enrollments)
+    
+*   Responsive layout
+    
+
+### 📚 Courses Management
+
+*   View all courses
+    
+*   Delete courses
+    
+*   Responsive:
+    
+    *   Table view (Desktop)
+        
+    *   Card view (Mobile)
+        
+*   Dynamic data rendering
+    
+
+### 👤 User Profile
+
+*   Read-only user information page
+    
+*   Dynamically displays only available fields
+    
+*   Hidden empty fields
+    
+
+### ⚙️ System Features
+
+*   Axios interceptors for:
+    
+    *   Authentication
+        
+    *   Error handling (401, 403, 500)
+        
+*   API response normalization:
+    
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   res.data?.data ?? res.data   `
+
+*   Clean modular structure
+    
+*   Reusable UI components
+    
+
+📱 Responsiveness
+-----------------
+
+The application is fully responsive:
+
+DeviceBehaviorMobileCard layouts, stacked UITabletGrid-based layoutDesktopSidebar + tables
+
+### Implementations:
+
+*   Tailwind breakpoints (sm, md, lg)
+    
+*   Responsive grids
+    
+*   Mobile-friendly navigation
+    
+*   Overflow handling for tables
+    
+
+📂 Project Structure
+src/
+│
+├── api/
+│   └── axios.ts                # Axios instance + interceptors
+│
+├── app/
+│   └── store.ts                # Redux store configuration
+│
+├── features/
+│   ├── auth/
+│   │   └── authSlice.ts        # Auth state, login, logout, user fetch
+│   │
+│   ├── courses/
+│   │   └── courseSlice.ts      # Course state & async actions
+│   │
+│   ├── categories/
+│   │   └── categorySlice.ts    # Category state & CRUD logic
+│   │
+│   └── enrollments/
+│       └── enrollmentSlice.ts  # Enrollment state management
+│
+├── services/
+│   ├── auth.service.ts         # Auth API calls
+│   ├── course.service.ts       # Course API calls
+│   ├── category.service.ts     # Category API calls
+│   └── enrollment.service.ts   # Enrollment API calls
+│
+├── components/
+│   ├── ui/
+│   │   ├── Button.tsx          # Reusable button component
+│   │   ├── Input.tsx           # Input with validation UI
+│   │   ├── Modal.tsx           # Reusable modal
+│   │   ├── Table.tsx           # Desktop table
+│   │   ├── Card.tsx            # Mobile card layout
+│   │   ├── Loader.tsx          # Loading skeleton
+│   │   └── EmptyState.tsx      # Empty UI state
+│   │
+│   └── shared/
+│       └── Navbar.tsx          # Top navigation (mobile/desktop)
+│
+├── layouts/
+│   └── DashboardLayout.tsx     # Sidebar + responsive layout
+│
+├── pages/
+│   ├── Login.tsx               # Login page
+│   ├── Register.tsx            # Register page
+│   ├── Dashboard.tsx           # Dashboard overview
+│   ├── Courses.tsx             # Course management
+│   ├── Categories.tsx          # Category CRUD
+│   ├── Enrollments.tsx         # Enrollment management
+│   ├── Users.tsx               # User list
+│   └── UserProfile.tsx         # Read-only user info page
+│
+├── routes/
+│   └── index.tsx               # App routing + protected routes
+│
+├── hooks/
+│   └── useAuth.ts              # Custom auth hook (optional)
+│
+├── types/
+│   └── index.ts                # TypeScript interfaces
+│
+├── utils/
+│   └── handleResponse.ts       # API response handler
+│
+├── App.tsx                     # Root component
+├── main.tsx                    # Entry point
+└── index.css                   # Tailwind styles
+
+⚙️ Installation & Setup
+-----------------------
+
+### 1\. Clone Repository
+`   git clone   cd course-management-system   `
+
+### 2\. Install Dependencies
+
+`   npm install   `
+
+### 3\. Run Development Server
+
+`   npm run dev   `
+
+👉 Open: [http://localhost:5173](http://localhost:5173/)
+
+📸 Screenshots
+--------------
+
+Screenshots are included inside the project folder showing:
+
+*   Login Page
+    
+*   Dashboard
+    
+*   Courses Page (Desktop & Mobile)
+    
+*   User Profile Page
+    
+
+🎥 Project Presentation
+-----------------------
+
+A short video presentation explaining:
+
+*   Features
+    
+*   Implementation
+    
+*   Workflow
+    
+
+📁 Located in:
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   Project Presentation/   `
+
+
+🧠 Design & Development Approach
+--------------------------------
+
+*   Focused on **clean architecture and scalability**
+    
+*   Followed **component reusability principles**
+    
+*   Ensured **consistent UI/UX**
+    
+*   Prioritized **performance and responsiveness**
+    
+*   Handled **API inconsistencies gracefully**
+    
+
+⚠️ Notes
+--------
+
+*   Some API responses may vary in structure → handled dynamically
+    
+*   Error handling implemented globally
+    
+*   Role-based restrictions may apply depending on API
+    
+
+📌 Future Improvements
+----------------------
+
+*   Course create/edit forms (modal-based)
+    
+*   Category & enrollment management UI
+    
+*   Advanced filtering and search
+    
+*   Toast notification system enhancement
+    
+*   Pagination support
+    
+
+👨‍💻 Author
+------------
+
+**Rasel Shikder**
+
+
+
