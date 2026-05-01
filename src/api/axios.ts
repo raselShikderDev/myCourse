@@ -1,10 +1,10 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const BASE_URL = 'https://register.cseconference.org/api';
+const BASE_URL = 'https://course-managment-backend.vercel.app';
 
 export const api = axios.create({
-  baseURL: BASE_URL,
+  baseURL: `${BASE_URL}/api/v1`,
   headers: { 'Content-Type': 'application/json' },
 });
 
