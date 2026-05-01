@@ -1,7 +1,7 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const BASE_URL = 'https://course-managment-backend.vercel.app';
+const BASE_URL ="http://localhost:4000";
 
 export const api = axios.create({
   baseURL: `${BASE_URL}/api/v1`,
